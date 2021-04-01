@@ -57,12 +57,23 @@ JavaScript
 
 1. Download all the files from the Dropbox.
 
-2. Open the Terminal on your Mac (Command Prompt on Windows) and run the following lines of code:-
+2. [Register a fitbit app](https://dev.fitbit.com/apps/new) with the following details:
+		
+		OAuth 2.0 Application Type: Server
+		Redirect URL: http://localhost:8000/fitbit
+		Default Access Type: Read-Only
+		
+		Rest of the details required may be added by your own preference
+		
+	
+	_Add your newly created fitbit app's CLIENT ID and CLIENT SECRET in fitbit/fitbitvars.py and templates/base1.html where specified._
+	
+3. Open the Terminal on your Mac (Command Prompt on Windows) and run the following lines of code:-
 
 
 	Use appropriate command to navigate into the project directory: 
  
-		cd workplusfinal		#make sure you are in the right folder to begin with
+		cd WorkPlus		#make sure you are in the right folder to begin with
 
 
 	Activate a virtual environment: 
@@ -75,19 +86,6 @@ JavaScript
 	Install all the required libraries and packages:
 		
 		pip install -r requirements.txt
-
-
-	
-	Connect to Fitbit API https://dev.fitbit.com/apps/new with the following details:
-		
-		OAuth 2.0 Application Type: Server
-		Redirect URL: http://localhost:8000/fitbit
-		Default Access Type: Read-Only
-		
-		Rest of the details required may be added by your own preference
-		
-	
-	Add your newly created fitbit app's CLIENT ID and CLIENT SECRET in fitbit/fitbitvars.py and templates/base1.html
 			
 
 	Run the server:
