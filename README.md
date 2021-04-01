@@ -78,7 +78,16 @@ JavaScript
 
 
 	
-	Connect to Fitbit API https://dev.fitbit.com/build/reference/web-api/ and add your CLIENT ID and CLIENT SECRET in fitbit/fitbitvars.py and templates/base1.html
+	Connect to Fitbit API https://dev.fitbit.com/apps/new with the following details:
+		
+		OAuth 2.0 Application Type: Server
+		Redirect URL: http://localhost:8000/fitbit
+		Default Access Type: Read-Only
+		
+		Rest of the details required may be added by your own preference
+		
+	
+	Add your newly created fitbit app's CLIENT ID and CLIENT SECRET in fitbit/fitbitvars.py and templates/base1.html
 			
 
 	Run the server:
