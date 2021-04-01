@@ -101,5 +101,5 @@ JavaScript
 
 ## Why you may not be able to run our project!
 
-- As stated in our sources above, our project uses Fitbit API to retrieve the user's daily activity. Doing so prompts us to apply our client_ID and client secret which is unique for every user. This is used to obtain the access token to activate the API. But since we are not dishing out any money to host the website on a paid server, the project will not work for anyone unless they have the client_ID and client secret. We are looking forward to publishing our website online in the near future and hopefully store all our files on a designated hosting service.
+- As stated in our sources above, our project uses Fitbit API to retrieve the user's daily activity. Doing so prompts us to apply our client_ID and client secret which is unique for every fitbit app. This is used to obtain the access token to activate the API. But since we are not dishing out any money to host the website on a paid server, the project will not work for anyone unless they have their own client_ID and client secret. We are looking forward to publishing our website online in the near future and hopefully store all our files on a designated hosting service.
 	 
