@@ -78,15 +78,7 @@ JavaScript
 
 
 	
-	Connect to Fitbit API https://dev.fitbit.com/build/reference/web-api/ and add your CLIENT ID and CLIENT SECRET in fitbitvars.py and base1.html
-	
-
-
-	Create and migrate all the required tables:
-
-		python3 manage.py makemigrations
-		
-		python3 manage.py migrate
+	Connect to Fitbit API https://dev.fitbit.com/build/reference/web-api/ and add your CLIENT ID and CLIENT SECRET in fitbit/fitbitvars.py and templates/base1.html
 			
 
 	Run the server:
