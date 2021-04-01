@@ -1,0 +1,252 @@
+<!--Using the template from base1.html-->
+{% extends 'base1.html' %}
+
+<!--To use crispy forms to manage Django forms-->
+{% load crispy_forms_tags %}
+
+{% load static %}
+
+{% block title %}
+Profile
+{%endblock%}
+
+
+{% block content %}
+
+    <div class="content-container">
+
+        <!--Split screen-->
+
+        <!--List of Teams-->
+        <div class="row master-row">
+            <div class="column left">
+                <div class="profile-pic row">
+                    <!--Profile Picture-->
+                    <img src="{{ user.profile.image.url }}" height="300px" alt="My Profile Pic">
+                </div>
+                <div class="row change-pic">
+                    <form method="POST" enctype="multipart/form-data">
+
+                        {% csrf_token %}
+                        {{ changePicForm|crispy }}
+
+                        <button type="submit" name = "changeProfileSubmit">Update!</button>
+                    </form>
+                </div>
+                <div class="row user-details">
+                    <table class="table table-striped">
+                        <tr>
+                            <th>
+                                <h2>User Details</h2>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>Username: {{ user.username }}</td>
+                        </tr>
+                        <tr>
+                            <td>First Name: {{ user.first_name }}</td>
+                        </tr>
+                        <tr>
+                            <td>Last Name: {{ user.last_name }}</td>
+                        </tr>
+                        <tr>
+                            <td>E-mail: {{ user.email }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="column-break"></div>
+
+            <!--List of teams the user is in-->
+            <div class="column middle">
+                <div class="view-teams">
+                    <table border="0" class="table table-striped groups">
+                        <tr>
+                            <th colspan="2">
+                                <h2>My Teams</h2>
+                            </th>
+                        </tr>
+                        {% for group in groups %}
+                        <tr>
+                            <td align="center">
+                                <img class="pfp" src="{{ group.groupPic.url }}" alt="" height="40px">
+                                    <a class="group-name" href="{% url 'group' groupid=group.groupid %}"">
+                                        {{ group.groupName }}
+                                    </a>
+                            </td>
+                            <td class=" td-cross">
+                                <div class="cross">
+                                    <form method="POST" action="{% url 'profile' %}">
+                                        {% csrf_token %}
+                                        <button type="submit" name="removeGroup" value="{{  group.groupid }}">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                                            </svg>
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                        {%endfor%}
+                    </table>
+                </div>
+
+                <!--To create teams-->
+                <div class="add-teams">
+                    <table class="table table-striped add-groups">
+                        <tr>
+                            <th colspan="2">
+                                <h2>Create Teams</h2>
+                            </th>
+                        </tr>
+                        <tr>
+                            <form class="form-horizontal" align="left" method="POST" action="">
+                                {% csrf_token %}
+                                <td class="add-group-form">
+                                    <div class="col-sm-12 placeholder-group">
+                                        {{ createGroupForm.groupName }}
+                                    </div>
+                                </td>
+                                <td class="add-group-form">
+                                    <div class="add">
+                                        <button
+                                            class="btn btn-elegant btn-rounded btn-sm my-0 waves-effect waves-light"
+                                                type="submit" name="createGroupSubmit">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </td>
+                            </form>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="column-break"></div>
+
+            <!--Fitness Cards-->
+
+            <div class="column-card right">
+                {% if fitnessData %}
+                <div class="dashboard">
+                    <h2 class="header-dash" align="center">
+                        Health and Fitness Dashboard
+                    </h2>
+                    <br>
+                    <div class="row justify-content-around fitness-card">
+                        <div class="card border-primary bg-light col-md-auto row">
+                            <img height="130px" class="card-img-top fitness-img" src="{% static 'steps.png' %}" alt="Card image cap">
+                            <div class="card-text">
+                                <p>Target Steps: {{ fitnessData.stepsGoals }}</p>
+                                <p>Steps taken today: {{ fitnessData.steps }}</p>
+                            </div>
+                        </div>
+                        <div class="card border-primary bg-light col-md-auto row">
+                            <img height="130px" class="card-img-top fitness-img" src="{% static 'calories.png' %}" alt="Card image cap">
+                            <div class="card-text">
+                                <p>KCal Target per day: {{ fitnessData.caloriesGoals }} </p>
+                                <p>KCal today today: {{ fitnessData.calories }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="row justify-content-around fitness-card">
+                        <div class="card border-primary bg-light col-md-auto row">
+                            <img height="130px" class="card-img-top fitness-img" src="{% static 'bodyfat.png' %}" alt="Card image cap">
+                            <div class="card-text">
+                                <p>Target Body Fat%: {{ fitnessData.fatGoals }}</p>
+                                <p>Current Body Fat%: {{ fitnessData.bodyFat }}</p>
+                            </div>
+                        </div>
+                        <div class="card border-primary bg-light col-md-auto row">
+                            <img height="130px" class="card-img-top fitness-img" src="{% static 'weight.png' %}" alt="Card image cap">
+                            <div class="card-text">
+                                <p>Target Weight: {{ fitnessData.weightGoals }}</p>
+                                <p>My Weight: {{ fitnessData.weight }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="row justify-content-around fitness-card row">
+                        <div class="card border-primary bg-light col-md-auto row">
+                            <img height="130px" class="card-img-top fitness-img" src="{% static 'sleep.png' %}" alt="Card image cap">
+                            <div class="card-text">
+                                <p>Daily sleep target: {{ fitnessData.sleepGoals }} Minutes</p>
+                                <p>Hours slept today: {{ fitnessData.sleep }} Hours</p>
+                            </div>
+                        </div>
+                        <div class="card border-primary bg-light col-md-auto row">
+                            <img height="130px" class="card-img-top fitness-img" src="{% static 'kilometer.png' %}" alt="Card image cap">
+                            <div class="card-text">
+                                <p>Your Target Distance: {{ fitnessData.distanceGoals }} KM</p>
+                                <p>KMs covered today: {{ fitnessData.distance }} KM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--If user not logged in-->
+                {% else %}
+                <div class="dashboard">
+                    <h2 class="header-dash" align="center">
+                        Health and Fitness Dashboard
+                    </h2>
+                    <br>
+                    <div class="row justify-content-around fitness-card">
+                        <div class="card border-primary bg-light col-md-auto row">
+                            <img height="130px" class="card-img-top fitness-img" src="{% static 'steps.png' %}" alt="Card image cap">
+                            <div class="card-text">
+                                <p>Recommended Target Steps: 5000</p>
+                            </div>
+                        </div>
+                        <div class="card border-primary bg-light col-md-auto row">
+                            <img height="130px" class="card-img-top fitness-img" src="{% static 'calories.png' %}" alt="Card image cap">
+                            <div class="card-text">
+                                <p>Recommended KCal Target per day: not defined </p>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row justify-content-around fitness-card">
+                        <div class="card border-primary bg-light col-md-auto row">
+                            <img height="130px" class="card-img-top fitness-img" src="{% static 'bodyfat.png' %}" alt="Card image cap">
+                            <div class="card-text">
+                                <p>Recommended Target Body Fat%: 18</p>
+                            </div>
+                        </div>
+                        <div class="card border-primary bg-light col-md-auto row">
+                            <img height="130px" class="card-img-top fitness-img" src="{% static 'weight.png' %}" alt="Card image cap">
+                            <div class="card-text">
+                                <p>Recommended Target Weight: not defined</p>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row justify-content-around fitness-card row">
+                        <div class="card border-primary bg-light col-md-auto row">
+                            <img height="130px" class="card-img-top fitness-img" src="{% static 'sleep.png' %}" alt="Card image cap">
+                            <div class="card-text">
+                                <p>Recommended daily sleep target: 420 Minutes</p>
+                            </div>
+                        </div>
+                        <div class="card border-primary bg-light col-md-auto row">
+                            <img height="130px" class="card-img-top fitness-img" src="{% static 'kilometer.png' %}" alt="Card image cap">
+                            <div class="card-text">
+                                <p>Recommended Target Distance: 5 KM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {%endif%}
+            </div>
+        </div>
+    </div>
+
+{%endblock%}

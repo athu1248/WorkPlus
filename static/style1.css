@@ -1,0 +1,543 @@
+* 
+{
+    margin: 0;
+    padding: 0;
+  
+}
+  
+body, html 
+{
+    height: 100%;
+    width: 100%;
+}
+  
+  
+html
+{
+    min-width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+body 
+{
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.wrapper
+{   
+    min-height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.content-container{
+    padding-bottom: 70px;
+}
+
+/*navbar*/
+
+.navbar
+{
+    height: 110px;
+    border: 1px solid rgba(0,0,0,.125);
+}
+
+.navbar-tab
+{
+    padding-left: 13px;
+    padding-top: 7px;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link
+{
+    color: black;
+    display: block;
+    font-size: 30px;
+    padding: 23px .9rem 20px;
+    text-decoration: none;
+    line-height: 27px;
+    font-weight: bolder;
+}
+
+.navbar-expand-lg .navbar-nav .nav-tab-dark
+{
+    color: white;
+}
+
+.navbar-expand-lg .navbar-nav .nav-tab-dark:hover
+{
+    color: gray;
+}
+
+.nav-content
+{
+    padding: 10px;
+}
+
+.navbar-brand 
+{
+    font-family: 'Fredoka One', cursive;
+    font-size: 55px;
+    line-height: 55px;
+    float: left;
+    padding: 15px 20px 15px;
+    font-weight: bolder;
+}
+
+.nav-tab
+{
+    font-size: 30px;
+}
+
+.line-break
+{
+    border-left: 2px solid black;
+}
+
+.line-break-dark
+{
+    border-left: 2px solid white;
+}
+
+.btn-dark
+{
+    background-color: black;
+    font-weight: bold;
+    font-size: large;
+}
+
+.carousel-inner
+{
+    height: 100% !important;
+}
+
+/*Footer*/
+footer
+{
+    background-color: #343a40!important;
+    font-size: 20px;
+    border: 1px solid rgba(0,0,0,.125);
+    position: relative;
+    bottom: 0;
+    height: 70px;
+    width: 100%;
+    z-index: 100;
+}
+
+.footer-container
+{
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+footer p {
+    margin-bottom:0!important;
+}
+
+
+* 
+{
+    box-sizing: border-box;
+}
+  
+/* Create two unequal columns that floats next to each other */
+.column 
+{
+    float: left;
+    height: inherit;
+}
+
+.column-break
+{
+    border-left: gray 0.1rem solid;
+}
+
+.column-card
+{
+    float: right;
+}
+
+.left
+{
+    width: 30%;
+    box-sizing: border-box;
+}
+
+.middle 
+{
+    width: 30%;
+    background-color: whitesmoke;
+    border:1px solid rgba(0,0,0,.125);
+}
+
+.right h2
+{
+    font-weight: 400;
+    background-color:white;
+}
+
+.right 
+{
+    width: 39%;
+    background-color: white;
+}
+
+.row
+{
+    margin-left: 0 !important;
+    margin-right: 5% !important;
+}
+
+.master-row
+{
+    max-height: 100%;
+    width: 100%;
+}
+
+.profile-pic
+{
+    padding-top: 2%;
+    padding-left: 11%;
+    box-sizing: border-box;
+}
+
+.change-pic
+{
+    padding-top: 10px;
+    padding-left: 30%;
+    padding-bottom: 2%;
+    box-sizing: border-box;
+}
+
+.change-pic button
+{
+    border-radius: 15px;
+    border: black 2px solid !important;
+    font-size: 0.8rem;
+}
+
+.user-details
+{
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.profile-pic img
+{
+    border-radius: 10000px;
+    border: black 5px solid;
+}
+
+.fitness-img
+{
+    margin-top: 13%;
+    height: 75px;
+    width: 75px;
+    
+}
+
+.fitness-card
+{
+    margin: 0%;
+    position: relative;
+}
+
+
+.card:hover
+{
+    transform: scale(1.1);
+}
+
+.card
+{
+    border-radius: 50px;
+    border: 3px solid black !important;
+    transition: transform .2s; /* Animation */
+    width: 42%;
+    height: 150px;
+}
+
+.card img
+{
+    float: left;
+}
+
+.card p
+{
+    font-size: 10px;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.card-img
+{
+    float: left;
+}
+
+.card-text
+{
+    height: 100%;
+    padding-top: 20%;
+    float: right;
+    align-items: center;
+    width: 50%;
+}
+
+table th
+{
+    background-color: white;
+    text-align: center;
+}
+
+table th h2
+{
+    font-weight:bolder;
+}
+
+.table
+{
+    width:100%;
+    text-decoration: none;
+}
+
+.dashboard
+{
+    margin-top:10px;
+    padding-bottom: 10px;
+}
+
+table td a, a:hover, a:focus, a:active 
+{
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* Create two unequal columns that floats next to each other */
+
+.left-dash
+{
+    width: 20%;
+    background-color: white;
+    border:1px solid rgba(0,0,0,.125);
+}
+
+
+.right-dash 
+{
+    width: 20%;
+    background-color: white;
+}
+
+.middle-dash
+{
+    width:60%;
+    background-color: white;
+    border:1px solid rgba(0,0,0,.125);
+}
+
+/* Clear floats after the columns */
+
+.row:after 
+{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+.header-dash
+{
+    padding-top: 10px;
+    font-weight: lighter;
+    font-size: 35px;
+    font-family: 'Anton'; 
+    background: rgb(255, 255, 255, 0)
+}
+
+.pfp
+{
+    border-radius: 50%;
+    float: left;
+    padding-left: 7px;
+    padding-right: 10px;
+}
+
+.view-teams
+{
+    height: 80%;
+}
+
+.add-teams
+{
+    height: 20%;
+    overflow: auto;
+}
+
+.groups
+{
+    margin-bottom: 0;
+}
+
+.group-name
+{
+    float: left;
+    padding: 7px;
+    font-size: 20px;
+}
+
+.cross button
+{
+    color: red;   
+    float: right;
+}
+
+.cross svg:hover
+{
+    color: #fff;
+    background-color: #dc3545;
+    border: #dc3545 1px solid;
+    border-radius: 5px;
+}
+
+.td-cross
+{
+    vertical-align: middle !important;
+}
+
+
+.projects
+{
+    width:95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.projects-pane
+{
+    height: 178px;
+    overflow:scroll;
+}
+
+.tick
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button
+{
+    padding:0;
+    border:none;
+    background:none;
+}
+
+.file-input
+{
+    margin-left: auto;
+    margin-right: auto;
+    text-align:center;
+    align-items: center;
+}
+
+.file-input input
+{
+    border:1px dashed;
+}
+
+.tasks-pane
+{
+    height:200px!important;
+    overflow:scroll;
+}
+
+.form-signing{
+    width:50%;
+}
+
+.middle-fitness
+{
+    width:70%;
+    background-color: white;
+    border:1px solid rgba(0,0,0,.125);
+}
+
+.left-fitness
+{
+    width: 15%;
+    background-color: white;
+    border:1px solid rgba(0,0,0,.125);
+}
+
+.right-fitness
+{
+    width:15%;
+    background-color: white;
+
+}
+
+.nrclogo{
+    text-align: center;
+    display: block;
+}
+
+.mypoints table{
+    margin-left: auto;
+    margin-right:auto;
+}
+
+.mypoints{
+    margin-top:20px;
+}
+
+.peer{
+    font-family: 'Anton', sans-serif;
+    font-size: 30px;
+}
+
+.stats{
+    width:60%;
+}
+
+@media screen and (max-width: 1024px) and (max-height: 1366px) {
+    .navbar {
+        height: 90px;
+    }
+
+    .navbar-brand 
+    {
+        font-size: 45px;
+        padding: 0;
+    }
+
+    .button-div
+    {
+        padding-right: 5%;
+    }
+
+    .navbar-collapse
+    {
+        background-color: white;
+        border: black 2px solid;
+        border-radius: 10%;
+    }
+
+    .line-break
+    {
+        display: none;
+    }
+    
+    .nav-item
+    {
+        border-bottom: gray 2px solid;
+    }
+
+    .nav-item-bottom
+    {
+        border-bottom: 0;
+    }
+}

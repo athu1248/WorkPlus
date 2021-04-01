@@ -1,0 +1,225 @@
+<!--Using the template from base1.html-->
+{% extends 'base1.html' %}
+
+<!--To use crispy forms to manage Django forms-->
+{% load crispy_forms_tags %}
+
+{% load static %}
+
+{%block title%}
+WorkPlus
+{%endblock%}
+
+{% block content %}
+
+    <!--Upload image to check KM ran-->
+    <div class="row">
+        <div class="column left-fitness">
+            <div class="nrclogo">
+                <img height="100px" width="75px" src="{% static 'nrclogo.svg' %}">
+            </div>
+            <div class="challenge">
+                <h5 align="center">Daily 2K Challenge</h3>
+            </div>
+            <div class="challenge-content">
+                <p>Run 2 Kilometers and upload your Nike Run Club screenshot of the run to claim your 10 points
+                    for today </p>
+            </div>
+            {% if fileCheckMessage %}
+                <p>{{ fileCheckMessage }}</p>
+            {%endif%}
+            <form style="margin-left:0px!important;" method = "POST" action="{% url 'groupfitness-home' groupid=groupuuid %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ addRunImageForm | crispy }}
+                <button type="submit" name="addRunImageSubmit">Upload</button>
+            </form>
+        </div>
+
+        
+        <div class="column middle-fitness">
+            <!--Display points-->
+            <div class="mypoints">
+                <table class="projects stats">
+                    <tr>
+                        <th rowspan="2"><h1>THIS MONTH</h1></th>
+                        <th align="center">MY POINTS</th>
+                        <th align="center">TEAM POINTS</th>
+                        
+                    </tr>
+                    <tr>
+                        <td align="center">{{ userPoints }}</td>
+                        <td align="center">{{ teamPoints }}</td>
+                    </tr>
+                </table>
+                </table>
+            </div>
+
+            <!--Carousel with quotes-->
+            <div class="content align-self-center">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="9"></li>
+                    </ol>
+                    <div style="margin-top:20px;" class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block  mx-auto" height="120px" width="100%" src="{% static 'quote1.png' %}"
+                                alt="First slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block mx-auto" height="120" width="100%" src="{% static 'quote2.png' %}"
+                                alt="Second slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block mx-auto" height="120" width="100%" src="{% static 'quote3.png' %}"
+                                alt="Third slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block mx-auto" height="120" width="100%" src="{% static 'quote4.png' %}"
+                                alt="Fourth slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block mx-auto" height="120" width="100%" src="{% static 'quote5.png' %}"
+                                alt="Fifth slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block mx-auto" height="120" width="100%" src="{% static 'quote6.png' %}"
+                                alt="Sixth slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block mx-auto" height="120" width="100%" src="{%  static 'quote7.png' %}"
+                                alt="Seventh slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block mx-auto" height="120" width="100%" src="{% static 'quote8.png' %}"
+                                alt="Eight slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block mx-auto" height="120" width="100%" src="{% static 'quote9.png' %}"
+                                alt="Ninth slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block mx-auto" height="120" width="100%" src="{% static 'quote10.png' %}"
+                                alt="Tenth slide">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                        data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                        data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+
+            <!--Trivia of the day-->
+            <div style="margin-top:10px;" class="lunchtime-trivia">
+                {% if quizQuestion %}
+                    <h4 align="center"><u> TRIVIA OF THE DAY </u></h4>
+                    <h4 align="center"> Once you select SHOW QUESTION, you have 10 seconds to answer!</h4>
+                    <h4 align="center"> Correct answer gives you +10 PTS! </h4>
+                    <div id="container">
+                        <a id="dummy" href="#container" onclick="countToShow(10)"><p align="center">SHOW QUESTION</p></a>
+                        <div id="ads" style="display: none">
+                            <div id="countdown">
+
+                            </div>
+                            <div>
+                                <form action="{% url 'groupfitness-home' groupid=groupuuid %}" method="POST">
+                                    {% csrf_token %}
+                                    <div>{{ quizQuestion }}</div>
+                                    {{ quizForm | crispy }}
+                                    <button name="quizAnswer" id ="quizAnswer" type="submit"
+                                        class="btn btn-dark btn-elegant btn-rounded btn-sm my-0 waves-effect waves-light">
+                                        Submit
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <div id="content" style="display: none">TIME UP! Better luck next time:) </div>
+                    </div>
+                {%else%}
+                    <p>You can only do quiz once in a day!</p>
+                {%endif%}
+                {% if quizMessage %}
+                    <div>
+                        {{ quizMessage }}
+                    </div>
+                {%endif%}
+            </div>
+        </div>
+
+        <!--View peer's stats-->
+        <div class="column right-fitness">
+            <h4 align="center">My Peers</h4>
+            {% for member in members %}
+                <table style="width:100%;" class="table-striped table-bordered projects">
+                    <tr>
+                        <th colspan="2">{{ member.username }}</th>
+                    </tr>
+                    <tr>
+                        <td>Steps : {{ member.steps }}</td>
+                    </tr>
+                    <tr>
+                        <td>Calories Burned : {{ member.calories }}</td>
+                    </tr>
+                    <tr>
+                        <td>Slept for (Hours): {{ member.sleep }}</td>
+                    </tr>
+                    {% if userType == "leader" %}
+                    <tr>
+                        <td>Run points: {{ member.points }}</td>
+                    </tr>
+                    {%endif%}
+                    <br>
+                </table>
+            {%endfor%}
+        </div>
+    </div>
+
+{%endblock%}
+
+{% block script %}
+
+<!--Trivia queries-->
+
+<script>
+
+    function countToShow(timeInSeconds) {
+
+        var countdownElement = document.getElementById('countdown');
+        var contentElement = document.getElementById('content');
+        var adsElement = document.getElementById('ads');
+        var remainingSeconds = timeInSeconds;
+
+        adsElement.style.display = '';
+        countdownElement.innerHTML = remainingSeconds;
+
+        var interval = setInterval(function () {
+
+            countdownElement.innerHTML = --remainingSeconds;
+
+            if (remainingSeconds === 0) {
+                clearInterval(interval);
+                contentElement.style.display = '';
+                adsElement.style.display = 'none';
+                document.getElementById("quizAnswer").click()
+            }
+
+        }, 1000);
+    }
+</script>
+
+{%endblock%}

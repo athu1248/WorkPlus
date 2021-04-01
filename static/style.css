@@ -1,0 +1,367 @@
+* 
+{
+    margin: 0;
+    padding: 0;
+  
+}
+  
+body, html 
+{
+    height: 100%;
+    width: 100%;
+}
+  
+  
+html
+{
+    min-width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+body 
+{
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.wrapper
+{   
+    width: 100%;
+    position: relative;
+}
+
+.content-container
+{
+    min-height: 100% !important;
+    min-width: 100% !important;
+    position: relative;
+}
+
+
+
+/*navbar*/
+
+.navbar
+{
+    height: 110px;
+    border:1px solid rgba(0,0,0,.125);
+}
+
+.navbar-tab
+{
+    padding-left: 13px;
+    padding-top: 7px;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link
+{
+    color: black;
+    display: block;
+    font-size: 30px;
+    padding: 23px .9rem 20px;
+    text-decoration: none;
+    line-height: 27px;
+    font-weight: bolder;
+}
+
+.nav-content
+{
+    padding: 10px;
+}
+
+.navbar-brand 
+{
+    font-family: 'Fredoka One', cursive;
+    font-size: 55px;
+    line-height: 55px;
+    float: left;
+    padding: 15px 20px 15px;
+    font-weight: bolder;
+}
+
+.nav-tab
+{
+    font-size: 30px;
+}
+
+.line-break
+{
+    border-left: 2px solid black;
+}
+
+.btn-dark
+{
+    background-color: black;
+    font-weight: bold;
+    font-size: large;
+}
+
+.carousel-inner
+{
+    height: 100% !important;
+}
+
+/*Footer*/
+footer
+{
+    background-color: #343a40!important;
+    font-size:20px;
+    border: 1px solid rgba(0,0,0,.125);
+    position: relative;
+    bottom: 0;
+    height: 70px;
+    width: 100%;
+    z-index: 100;
+}
+
+.footer-container
+{
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+footer p {
+    margin-bottom:0!important;
+}
+
+
+* 
+{
+    box-sizing: border-box;
+}
+  
+/* Create two unequal columns that floats next to each other */
+
+.left 
+{
+    width: 20%;
+    background-color: whitesmoke;
+    border:1px solid rgba(0,0,0,.125);
+}
+
+.right h2
+{
+    font-weight: 400;
+    background-color:white;
+}
+
+.right 
+{
+    width: 80%;
+    background-color: white;
+    margin-bottom:30px;
+}
+
+/* Clear floats after the columns */
+
+.row
+{
+    width: 100%;
+    margin: auto;
+}
+
+.row:after 
+{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+.fitness-img
+{
+    margin-top: 15px;
+    height: 130px;
+    width: 130px;
+    
+}
+
+.fitness-card
+{
+    height: 200px;
+    margin: 20px;
+    float: center;
+    position: relative;
+    padding: 0 75px;
+
+}
+
+
+.card:hover
+{
+    transform: scale(1.1);
+}
+
+.card
+{
+    border-radius: 50px;
+    border: 3px solid black !important;
+    transition: transform .2s; /* Animation */
+    width: 230px;
+    height: 270px;
+}
+
+.card p
+{
+    font-size: 13px;
+}
+
+.card-body
+{
+    height: 20%;
+}
+
+table th
+{
+    background-color: white;
+    text-align: center;
+}
+
+table th h2
+{
+    font-weight:bolder;
+}
+
+.table
+{
+    width:100%;
+    text-decoration: none;
+}
+
+.dashboard
+{
+    margin-top:10px;
+    padding-bottom: 10px;
+}
+
+table td a, a:hover, a:focus, a:active 
+{
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* Create two unequal columns that floats next to each other */
+.column 
+{
+    float: left;
+    height:inherit;
+    padding-bottom:20px;
+}
+
+.left-dash
+{
+    width: 20%;
+    background-color: white;
+    border:1px solid rgba(0,0,0,.125);
+}
+
+
+.right-dash 
+{
+    width: 20%;
+    background-color: white;
+}
+
+.middle-dash
+{
+    width:60%;
+    background-color: white;
+    border:1px solid rgba(0,0,0,.125);
+}
+
+/* Clear floats after the columns */
+
+.row:after 
+{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+.header-dash{
+    padding-top: 10px;
+    font-weight: lighter;
+    font-size: 35px;
+    font-family: 'Anton'; 
+    background: rgb(255, 255, 255, 0)
+}
+
+.pfp
+{
+    border-radius: 500px;
+    float: left;
+    padding-left: 7px;
+    box-sizing: border-box;
+}
+
+
+.group-name
+{
+    float: left;
+    padding: 7px 7px 0px;
+}
+
+.groups tr td svg
+{
+    color: red;
+    border-radius: 5px;
+}
+
+.td-cross
+{
+    vertical-align: middle!important;
+}
+
+
+.projects
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.projects-pane
+{
+    height:178px;
+    overflow:scroll;
+}
+
+.tick
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button
+{
+    padding:0;
+    border:none;
+    background:none;
+}
+
+.file-input
+{
+    margin-left: auto;
+    margin-right: auto;
+    text-align:center;
+    align-items: center;
+}
+
+.file-input input
+{
+    border:1px dashed;
+}
+
+.tasks-pane
+{
+    height:200px!important;
+    overflow:scroll;
+}
+
+.form-signing{
+    width:50%;
+}
