@@ -6,7 +6,7 @@ Team Bro Code
 
 ## Group members (first name and surname for each of your group members):
 
-[Atharva Kulkarni](https://www.linkedin.com/in/atharva-kulkarni-0b292320a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BMUievu70QISmeuJcTVXlDQ%3D%3D)
+[Atharva Kulkarni](https://www.linkedin.com/in/atharva-kulkarni-0b292320a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BMUievu70QISmeuJcTVXlDQ%3D%3D)  
 Darshan Shivakumar  
 Aditya Sundar  
 Debashish Sahoo  
