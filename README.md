@@ -76,7 +76,7 @@ WorkPlus is a collaborative platform designed for workplace communication that s
 		cd WorkPlus		#make sure you are in the right folder to begin with
 
 
-	Activate a virtual environment: 
+	Activate a virtual environment (Optional): 
 
 		virtualenv env  
                      
