@@ -1,10 +1,10 @@
-# WorkPlus
+# WorkPlus - Our Hackathon Project
 
-## Fun Group name (can be different from Discord group name):
+## Fun Group name:
 
 Team Bro Code
 
-## Group members (first name and surname for each of your group members):
+## Group members:
 
 [Atharva Kulkarni](https://www.linkedin.com/in/atharva-kulkarni-0b292320a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BMUievu70QISmeuJcTVXlDQ%3D%3D)  
 Darshan Shivakumar  
