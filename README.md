@@ -47,11 +47,11 @@ WorkPlus is a collaborative platform designed for workplace communication that s
 
 ## Technologies/Software/Programming Languages used:
 
-• Django  
-• Python   	   
-• HTML    
-• CSS     
-• JavaScript  
+- Django  
+- Python   	   
+- HTML    
+- CSS     
+- JavaScript  
 
 ## Detailed instructions for how to open or run your project:
 
