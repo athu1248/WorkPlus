@@ -6,10 +6,10 @@ Team Bro Code
 
 ## Group members (first name and surname for each of your group members):
 
-Atharva Kulkarni
-Darshan Shivakumar
-Aditya Sundar
-Debashish Sahoo
+Atharva Kulkarni  
+Darshan Shivakumar  
+Aditya Sundar  
+Debashish Sahoo  
 
 ## Fill in the gaps:
 
