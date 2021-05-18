@@ -95,8 +95,8 @@ WorkPlus is a collaborative platform designed for workplace communication that s
 
 		python3 manage.py runserver   
 
-## License & Code Re-User
-The code for this project is released under the [GPL-3.0 License](./LICENSE). You are free to re-use it, but we ask that you please include a link back to this GitHub repository.
+## License & Code Re-Use
+The code for this project is released under the [GPL-3.0 License](./LICENSE). We ask that you please include a link back to this GitHub repository.
 
 ## Project official sources
 
