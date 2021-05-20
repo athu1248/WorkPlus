@@ -69,7 +69,7 @@ WorkPlus is a collaborative platform designed for workplace communication that s
 		Rest of the details required may be added by your own preference
 		
 	
-	_Add your newly created fitbit app's CLIENT ID and CLIENT SECRET in fitbit/fitbitvars.py and templates/base1.html where specified._
+	_Add your newly created fitbit app's [CLIENT ID](./fitbit/fitbitvars.py:8) and [CLIENT SECRET](./fitbit/fitbitvars.py:9) in fitbit/fitbitvars.py and templates/base1.html where specified._
 	
 3. Open the Terminal on your Mac (Command Prompt on Windows) and run the following lines of code:-
 
