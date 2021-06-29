@@ -7,7 +7,7 @@ Team Bro Code
 ## Group members:
 
 [Atharva Kulkarni](https://www.linkedin.com/in/atharva-m-kulkarni/)  
-Darshan Shivakumar  
+[Darshan Shivakumar](https://www.linkedin.com/in/darshan-shivakumar-32289919b/)
 Aditya Sundar  
 Debashish Sahoo 
 
